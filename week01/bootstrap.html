@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
+
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+    <style>
+        * {
+            font-family: 'Stylish', sans-serif;
+        }
+
+        .wrap {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .post-box {
+            width: 500px;
+            margin: 20px auto;
+            padding: 50px;
+            border: black solid;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+<!--<h1>이걸로 시작해보죠!</h1>-->
+
+<!--<button type="button" class="btn btn-primary">Primary</button>-->
+
+<!--<button type="button" class="btn btn-outline-info">Info</button>-->
+<div class="wrap">
+    <div class="jumbotron">
+        <h1 class="display-4">Hello, world!</h1>
+        <p class="lead"> lead </p>
+        <hr class="my-4">
+        <p> container </p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">포스팅박스 열기</a>
+        </p>
+    </div>
+    <div class="post-box">
+        <form action="/action_page.php">
+            <div class="form-group">
+                <label for="email">아티클 URL:</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+                <label for="comment">간단 코멘트:</label>
+                <textarea class="form-control" rows="2" id="comment"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">기사저장</button>
+        </form>
+    </div>
+    <div class="card-columns">
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">1 Card title that wraps to a new line</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsyyqs-1q4AbQgzJpi_ga7YKuM9_dLsvkzWg&usqp=CAU"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">2 Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">3 Card title that wraps to a new line</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsyyqs-1q4AbQgzJpi_ga7YKuM9_dLsvkzWg&usqp=CAU"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">4 Card title</h5>
+                <p class="card-text">주당 6시간 x 8주 완성
+                    11월 28일 ~ 1월 21일 (토/일/월수/화목 반 순차개강)
+                    5주 이론 + 3주 내 프로젝트
+                    토요반, 일요반: 오후 1시~7시
+                    월수반, 화목반: 오후 7시반~10시반
+                    8주 동안 시간낼 수 있을까, 걱정이라구요?
+                    한두번 빠지더라도 따라갈 수 있도록 모든 강의를 영상으로 제공하고, 매주 금요일 오피스아워를 두었습니다.
+                    의지만 가지고 오세요. 이미 많은 분들이 증명했습니다. 참, 두 번의 총정리 리뷰특강도 있답니다!</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">5 Card title that wraps to a new line</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.자, 콘서트 티켓을 예매하고 있는 상황을 상상해봅시다!
+                    좌석이 찰 때마다 예매 페이지가 새로고침 되면 난감하겠죠ㅠ?
+                    이럴 때! 서버에서 데이터만 받아서 데이터 내용만 바꿔주게 된답니다.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsyyqs-1q4AbQgzJpi_ga7YKuM9_dLsvkzWg&usqp=CAU"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">6 Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">7 Card title that wraps to a new line</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.현) IT대기업 K사 SW Engineer
+                    이커머스 T사 SW Engineer
+                    스파르타코딩클럽 8기 튜터
+                    저 역시 수학과를 졸업하여 코딩과는 거리가 멀었기에 여러분이 어떤 부분에서 어려움을 느끼고 계실지 충분히 이해합니다.
+                    개인 프로젝트를 통해 효율적이고 재미있게 배워봐요. 함께 고민하고 해결하다보면 금새 성장하실 거라 굳게 믿습니다.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsyyqs-1q4AbQgzJpi_ga7YKuM9_dLsvkzWg&usqp=CAU"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">8 Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">9 Card title that wraps to a new line</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsyyqs-1q4AbQgzJpi_ga7YKuM9_dLsvkzWg&usqp=CAU"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">10 Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+
+</html>

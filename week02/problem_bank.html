@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript를 연습하자!</title>
+
+    <style type="text/css">
+        div.question-box {
+            margin: 10px 0 20px 0;
+        }
+    </style>
+
+      <!-- JQuery를 import 합니다 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script>
+        /////Javascript 패턴
+        /////////////#1번
+        // 버튼을 누른 횟수를 저장할 변수 선언
+		let count = 0;
+		function showButtonCount(){
+		    // 1. 버튼을 누를 때마다(함수를 호출할 때마다) 누른 횟수 증가
+            count += 1
+			// 2. 누른 횟수가 20 미만이면 "안녕! {{실제 누른 횟수}} 번 누르셨네요!" alert 창 띄우기
+            if (count < 20) {
+                alert(`안녕! ${count}번 누르셨네요!`)
+            }else {// 3. 누른 횟수가 20번 이상이면,'앗. 그만 누르세요 이제!' alert 창 띄우기
+                alert(`앗. 그만 누르세요 이제!`)
+            }
+		}
+        /////////////#2번
+		 let num = 0;
+        function handleClick() {
+            num += 1;
+            // 클릭에 따라 다른 얼럿을 띄웁니다.
+            if(num % 2 == 0){ //짝수
+                alert('짝짝짝👏');
+            }else { //홀수
+                alert('홀홀홀🎅');
+            }
+        }
+
+        /////////////#3번
+    </script>
+</head>
+
+<body>
+<h1>Javascript를 연습하자!</h1>
+
+<div class="question-box">
+    <h2>누른 횟수를 보여주는 함수 만들기</h2>
+    <h5>1. 버튼을 누를 때마다(함수를 호출할 때마다) 누른 횟수 증가</h5>
+    <h5>2. 누른 횟수가 20 미만이면 "안녕! {{실제 누른 횟수}} 번 누르셨네요!" alert 창 띄우기</h5>
+    <h5>3. 누른 횟수가 20번 이상이면,'앗. 그만 누르세요 이제!' alert 창 띄우기</h5>
+    <button onclick="showButtonCount()">클릭</button>
+</div>
+
+ <button onclick="handleClick()">이 버튼을 눌러보세요</button>
+</body>
+
+</html>

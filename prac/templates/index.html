@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>첫 Flask 프로젝트</title>
+
+    <script>
+        $(document).ready(function () {
+            //title_give();
+            title_post();
+        });
+
+        function title_give() {
+            //let parameter = $('#title').val()
+            $.ajax({
+                type: "GET",
+                url: "/test?title_give=봄날은간다",
+                data: {},
+                success: function (response) {
+                    console.log(response)
+                }
+            })
+        }
+
+        function title_post() {
+            $.ajax({
+                type: "POST",
+                url: "/test",
+                data: { title_give: "봄날은간다" },
+                success: function (response) {
+                    console.log(response)
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<h1>서버를 만들었다!</h1>
+<img src="{{ url_for('static', filename='rome.jpg') }}"/>
+</body>
+</html>

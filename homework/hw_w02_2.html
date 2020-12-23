@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <!-- 구글폰트 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+    <title>동네마켓</title>
+
+    <!-- style -->
+    <style>
+        body {
+            font-family: 'Jua', sans-serif;
+        }
+
+
+        .wrap {
+            width: 500px;
+            margin: 0 auto;
+            /*margin-left: 50px;*/
+            margin-bottom: 50px;
+            /*padding-right: 50px;*/
+        }
+
+        .img-top {
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            width: 500px;
+            height: 300px;
+        }
+
+        .img-wrap {
+            height: 50%;
+            width: auto;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+
+        }
+
+        .space-between {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .article-profile-image {
+            display: inline-block;
+        }
+
+        .article-profile-left {
+            display: inline-block;
+            margin-left: 8px;
+        }
+
+        .article-profile-image > img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .article-profile-left > div {
+            font-size: 13px;
+            line-height: 1.46;
+            letter-spacing: -0.6px;
+            color: #212529;
+        }
+
+        .product > h2, h6 {
+            display: inline;
+        }
+        .exchange-rate-title{
+            color: cornflowerblue;
+            display: inline;
+        }
+        .exchange-rate-number{
+             color:cornflowerblue ;
+            display: inline;
+        }
+
+
+    </style>
+    <script>
+         $(document).ready(function () {
+           $('#post-box').hide();
+           getExchangeRate();
+        });
+        function openClose(){
+              console.log('버튼 클릭')
+            if ($('#post-box').css('display') == 'block'){
+                 $('#post-box').hide()
+                 $('#btn-post-box').text('주문 박스 열기 ')
+            }else{
+                 $('#post-box').show()
+                 $('#btn-post-box').text('주문 박스 닫기 ')
+            }
+        }
+        function getExchangeRate() {
+            $.ajax({
+                type: "GET",
+                url: "https://api.manana.kr/exchange/rate.json",
+                data: {},
+                success: function (response) {
+                    console.log(response)
+                    let rate = response[1]['rate']
+                    console.log(rate)
+                    $('#exchange-rate').text(rate)
+                }
+            })
+
+        }
+    </script>
+</head>
+<body>
+
+<div class="wrap">
+    <div class="img-wrap">
+        <img class="img-top"
+             src="https://dnvefa72aowie.cloudfront.net/origin/article/202012/001804B4F69C05CC1B3D753CB5162F8898CF0A7992ACFBABFAF5B140B3B0FF60.jpg?q=95&s=1440x1440&t=inside"
+             alt="product image cap">
+    </div>
+    <div class="space-between">
+        <div class="article-profile-image">
+            <img alt="키리니"
+                 src="https://d1unjqcospf8gs.cloudfront.net/assets/users/default_profile_80-7e50c459a71e0e88c474406a45bbbdce8a3bf2ed4f2efcae59a064e39ea9ff30.png">
+        </div>
+        <div class="article-profile-left">
+            <h6 class="nickname">키리니</h6>
+            <div class="region-name">관악구 신림동</div>
+        </div>
+    </div>
+    <hr>
+    <div class="product">
+        <div>
+             <p class="exchange-rate-title"> 달러-원 환율 :  </p>
+            <p class="exchange-rate-number" id="exchange-rate">  </p>
+        </div>
+        <h2> 자전거 보세요 </h2>
+        <h6> 가격: </h6> <h6 id="price"> 30,000 </h6> <h6> 원 / 개 </h6>
+        <p class="description"> 쉐보레 자전거에요 정확한 품명은 모르겠어요
+            네고 되니까 가져가실 분 연락 주세요~ </p>
+    </div>
+    <hr>
+    <div class="">
+        <!--        <h3> 주문하기 </h3>-->
+        <p class="lead">주문해보시겠어요? </p>
+        <p class="lead">
+            <button onclick="openClose()" id="btn-post-box" type="button" class="btn btn-primary">주문 박스 열기
+            </button>
+        </p>
+        <div id="post-box">
+            <form action="" class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="uname">주문자 성함 </label>
+                    <input type="text" class="form-control" id="uname" placeholder="이름을 입력하세요" name="uname" required>
+                    <div class="valid-feedback">유효 </div>
+                    <div class="invalid-feedback">이름을 입력하세요.</div>
+                </div>
+                <div class="form-group">
+                    <label class="order-count">수량</label>
+                    <select class="custom-select" id="order-count" required >
+                        <option selected value=""> -- 수량을 선택하세요 --</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="address">주소 </label>
+                    <input type="text" class="form-control" id="address" placeholder="배송지/희망 약속 장소를 입력하세요"
+                           name="address"
+                           required>
+                    <div class="valid-feedback">유효 </div>
+                    <div class="invalid-feedback">주소를 입력해주세요</div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">전화번호 </label>
+                    <input type="text" class="form-control" id="phone" placeholder="숫자를 입력하세요" name="phone" required>
+                    <div class="valid-feedback">유효</div>
+                    <div class="invalid-feedback">연락처를 입력해주세요</div>
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember" required> 정보제공에 동의합니다.
+                        <div class="valid-feedback">유효</div>
+                        <div class="invalid-feedback">주문하시려면 동의가 필요합니다</div>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-outline-success">제출</button>
+            </form>
+        </div>
+
+
+        <script>
+            // Disable form submissions if there are invalid fields
+            (function () {
+                'use strict';
+                window.addEventListener('load', function () {
+                    // Get the forms we want to add validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (form.checkValidity() === false ) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            } else {
+                                //입력 성공 시
+                                alert('주문이 완료되었습니다.');
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+
+        </script>
+    </div>
+
+</div>
+
+</body>
+</html>
